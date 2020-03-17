@@ -1,21 +1,19 @@
 package lambda;
-
-
 @FunctionalInterface
-interface MyFunction {
+interface MyFunction{
     void run();
 }
 
 class LambdaEx1 {
-    static void excute(MyFunction f) {  //매개변수의 타입이 MyFunction인 메소드
+    static void excution(MyFunction f){
         f.run();
     }
 
-    static MyFunction getMyFunction() {
-        MyFunction f = () -> System.out.println("f3.run()");
-        return f;
+    static MyFunction getMyFunction(){
+//        MyFunction f = () -> System.out.println("f3.run()");
+//        return f;
+        return ()-> System.out.println("f3.run()");
     }
-
     public static void main(String[] args) {
         MyFunction f1 = () -> System.out.println("f1.run()");
 
@@ -32,7 +30,6 @@ class LambdaEx1 {
         f2.run();
         f3.run();
 
-        excute(f1);
-        excute(() -> System.out.println("run()"));
+        excution(f1);
     }
 }
