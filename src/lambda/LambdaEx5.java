@@ -43,6 +43,7 @@ public class LambdaEx5 {
     static <T> void makeRandomList(Supplier<T> s, List<T> list) {
         for(int i=0; i < 10; i++){
             list.add(s.get());
+            //
         }
     }
 }
